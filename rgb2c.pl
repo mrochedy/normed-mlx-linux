@@ -19,7 +19,7 @@ open(RGB, "/usr/X11/lib/X11/rgb.txt");
 
 printf("/*\n** This is a generated file with rgb2c.pl and rgb.txt from\n");
 printf("** the XFree86 distribution.\n*/\n\n");
-printf("struct s_col_name mlx_col_name[] =\n{\n");
+printf("struct s_col_name g_mlx_col_name[] =\n{\n");
 
 while (<RGB>)
 {

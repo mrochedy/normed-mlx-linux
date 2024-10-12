@@ -1,9 +1,9 @@
 /*
- ** xpm-read.c for MinilibX in 
- ** 
+ ** xpm-read.c for MinilibX in
+ **
  ** Made by Charlie Root
  ** Login   <ol@epitech.net>
- ** 
+ **
  ** Started on  Tue Dec 11 15:25:27 2001 olivier crouzet
  ** Last update Sat Oct  1 14:56:13 2005 Olivier Crouzet
  */
@@ -11,7 +11,7 @@
 
 #include	"mlx_int.h"
 
-extern struct s_col_name mlx_col_name[];
+extern struct s_col_name g_mlx_col_name[];
 
 
 #define	RETURN	{ if (colors) free(colors); if (tab) free(tab); \
@@ -76,7 +76,7 @@ char	*mlx_int_static_line(char **xpm_data,int *pos,int size)
 			len = len2;
 	}
 	strlcpy_is_not_posix(copy, str, len2);
-	
+
 	return (copy);
 }
 
@@ -88,7 +88,7 @@ int	mlx_int_get_col_name(char *str,int size)
 	result = 0;
 	while (size--)
 		result = (result<<8)+*(str++);
-	
+
 	return (result);
 }
 
@@ -105,10 +105,10 @@ int	mlx_int_get_text_rgb(char *name, char *end)
 			name = buff;
 	}
 	i = 0;
-	while (mlx_col_name[i].name)
+	while (g_mlx_col_name[i].name)
 	{
-			if (!strcasecmp(mlx_col_name[i].name, name))
-					return (mlx_col_name[i].color);
+			if (!strcasecmp(g_mlx_col_name[i].name, name))
+					return (g_mlx_col_name[i].color);
 			i ++;
 	}
 	return (0);
@@ -118,7 +118,7 @@ int	mlx_int_get_text_rgb(char *name, char *end)
 int	mlx_int_xpm_set_pixel(t_img *img, char *data, int opp, int col, int x)
 {
 	int	dec;
-	
+
 	dec = opp;
   	while (dec--)
     {
