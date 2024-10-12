@@ -6,7 +6,7 @@
 /*   By: mrochedy <mrochedy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 17:03:51 by mrochedy          #+#    #+#             */
-/*   Updated: 2024/10/12 17:06:17 by mrochedy         ###   ########.fr       */
+/*   Updated: 2024/10/12 17:57:32 by mrochedy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@
 # define ERR_NO_TRUECOLOR "MinilibX Error : No TrueColor Visual available.\n"
 # define WARN_SHM_ATTACH "MinilibX Warning : X server can't attach \
 shared memory.\n"
+
+typedef int	(*t_event_func)(void);
 
 typedef struct s_xpm_col
 {
